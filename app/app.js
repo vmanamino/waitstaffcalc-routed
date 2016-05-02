@@ -4,8 +4,15 @@ angular.module('myApp', ['ngRoute'])
             .when('/', {
                 templateUrl : 'index.html',
                 controller : 'IndexCtrl'
+            })
+            .when('/details', {
+                templateUrl : 'details.html',
+                controller : 'DetailsCtrl'
             });
     }])
     .controller('IndexCtrl', ['$scope', function($scope) {
         
-    } ]);
+    } ])
+    .controller('DetailsCtrl', ['$scope', function($scope) {
+    
+    }]);
