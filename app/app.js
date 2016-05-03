@@ -28,7 +28,7 @@ angular.module('myApp', ['ngRoute'])
         
     } ])
     .controller('DetailsCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-        $rootScope.basemeal = '';
+        $scope.basemeal = ''
         $scope.taxrate = '';
         $scope.tipPercentage = '';
         $scope.tip =  0;
@@ -40,10 +40,10 @@ angular.module('myApp', ['ngRoute'])
         $scope.displayErrors = 'no';
         
         $scope.submit = function(){
-            console.log($rootScope.basemeal);
-            if ($rootScope.basemeal && $scope.taxrate && $scope.tipPercentage){
-                $scope.subtotal = $rootScope.basemeal + ($rootScope.basemeal * ($scope.taxrate / 100));
-                $scope.tip = $rootScope.basemeal * ($scope.tipPercentage / 100);
+            console.log($scope.basemeal);
+            if ($scope.basemeal && $scope.taxrate && $scope.tipPercentage){
+                $scope.subtotal = $scope.basemeal + ($scope.basemeal * ($scope.taxrate / 100));
+                $scope.tip = $scope.basemeal * ($scope.tipPercentage / 100);
                 $scope.total = $scope.subtotal + $scope.tip;
                 addUp($scope.tip);
                 
@@ -53,27 +53,28 @@ angular.module('myApp', ['ngRoute'])
             }
         };
         $scope.cancel = function(){
-            $rootScope.basemeal = '';
+            $scope.basemeal = '';
             $scope.taxrate = '';
             $scope.tipPercentage = '';
-        }
+        };
         var addUp = function(tip){
             $rootScope.meals += 1;
             $rootScope.tiptotal += tip;
-            $rootScope.avg = $rootScope.tiptotal / $rootScope.meals
+            $rootScope.avg = $rootScope.tiptotal / $rootScope.meals;
             
             
         };
 
     }])
     .controller('EarnCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-        $scope.meals = $rootScope.meals;
-        $scope.tiptotal = $rootScope.tiptotal;
-        $scope.avg = $rootScope.avg;
+        $rootScope.meals;
+        $rootScope.tiptotal;
+        rootScope.avg;
         
         $scope.reset = function(){
-            $rootScope.basemeal = 0;
-            console.log($rootScope.basemeal);
+            $rootScope.meals = '';
+            $rootScope.tiptotal = '';
+            $rootScope.avg = '';
         };
         
     }]);
