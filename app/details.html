@@ -1,1 +1,63 @@
-<h1>Details</h1>
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Waitstaff Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container" ng-controller='DetailsCtrl'>
+        <div class="meal">
+            <h1>Enter the Meal Details</h1>
+            <div class="inputs">
+                <form name='myForm' novalidate ng-submit='submit()'>
+                    <table>
+                        <tr>
+                            <td><p>Base meal price: $</p></td>
+                            <td><input id="basemeal" type="number" name="basemeal" ng-model="basemeal" required/></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tax rate: %</p></td>
+                            <td><input id="taxrate" type="number" name="taxrate" ng-model="taxrate" required /></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tip percentage: %</p></td>
+                            <td><input id="tipPercentage" type="number" name="tipPercentage" ng-model="tipPercentage" required /></td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <input type="submit" value="Submit"/><input type="button" value="Cancel" ng-click="cancel()"/>
+                </form>
+                <div class="errors" ng-hide="displayErrors">
+                    <h1 ng-if="myForm.$invalid">Input the following:</h1>
+                    <p ng-if="myForm.basemeal.$error.required">Base price of the meal</p>
+                    <p ng-if="myForm.taxrate.$error.required">Tax rate</p>
+                    <p ng-if="myForm.tipPercentage.$error.required">Tip percentage</p>
+                </div>
+            </div>
+        </div>
+        <div class="charges">
+            <h1>Customer Charges</h1>
+            <div class="customerout">
+                <table>
+                    <tr>
+                        <td><p>Subtotal</p></td>
+                        <td><span>{{ subtotal | currency }}</span></td>
+                    </tr>
+                    <tr>
+                        <td><p>Tip </p></td>
+                        <td><span>{{ tip | currency }}</span></td>
+                    </tr>
+                    <tr>
+                        <td><hr width="150%"/></td>
+                    </tr>
+                    <tr>
+                        <td><p>Total </p></td>
+                        <td><span>{{ total | currency }}</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+</body>
+</html>

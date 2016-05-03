@@ -1,1 +1,28 @@
-<h1>Earnings</h1>
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Waitstaff Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="earnings" ng-controller='EarnCtrl'>
+            <h1>My Earnings Info</h1>
+            <table>
+                <tr>
+                    <td><p>Tip Total </p></td>
+                    <td><span>{{ tiptotal | currency}}</span></td>
+                </tr>
+                <tr>
+                    <td><p>Meal Count</p></td>
+                    <td><span>{{ meals | number }}</span></td>
+                </tr>
+                <tr>
+                    <td><p>Average Tip </p></td>
+                    <td><span>{{ avg | currency}}</span></td>
+                </tr>
+            </table>
+        </div>
+        <input type="button" id="reset" value="Reset" ng-click="reset()"/>
+</body>
+</html>

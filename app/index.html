@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Waitstaff Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <!--<a></a>-->
-    <!--<a></a>-->
-    <!--<a></a>-->
+    <div class="banner">
+        <h1>Waitstaff Calculator</h1>
+    </div>
+    <div class="nav">
+        <a ng-href="#/">Home</a>
+        <a ng-href="#/details">Details</a>
+        <a ng-href="#/earnings">Earnings</a>
+    </div>
     <div ng-view></div>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    
-    
 </body>
 </html>

@@ -1,0 +1,92 @@
+.nav {
+    text-align: center
+}
+
+.banner {
+    text-align: center;
+}
+
+.banner > h1 {
+    font-size: 4em;
+}
+
+.container {
+    /*position: absolute;*/
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.meal,
+.charges,
+.earnings {
+    position: absolute;
+    display: inline-block;
+    justify-content: center;
+    border-style: solid;
+    border-color: black;
+    
+}
+
+.meal {
+    /*position: absolute;*/
+    right: 1079px;
+    width: 700px;
+    /*margin-left: 220px;*/
+    text-align: center;
+    height: 700px;
+}
+
+.charges {
+    /*position: absolute;*/
+    right: 375px;
+    height: 500px;
+    width: 700px;
+    /*margin-right: 170px;*/
+    text-align: center;
+}
+
+.earnings {
+    /*display: flex;*/
+    /*position: absolute;*/
+    text-align: center;
+    top: 511px;
+    /*margin-top: 10%;*/
+    /*margin-bottom: 10%;*/
+    height: 347px;
+    width: 700px;
+    left: 1053px;
+}
+
+.inputs input {
+    margin-left: 1em;
+}
+
+table {
+    margin: 0 auto;
+}
+
+#reset {
+    position: absolute;
+    top: 900px;
+    /* left: 0px; */
+    right: 380px;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 5em;
+}
+
+p {
+    padding-right: 15px;
+    width: 25em;
+    height: 10em;
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    margin: auto;
+}
+
+td {
+    vertical-align: baseline;
+}
