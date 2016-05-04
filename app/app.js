@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', ['ngRoute', 'ngAnimate'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -18,10 +18,18 @@ angular.module('myApp', ['ngRoute'])
             })
             .otherwise('/');
     }])
-    .run(['$rootScope', '$location', function($rootScope, $location) {
+    .run(['$rootScope', '$location', '$timeout', function($rootScope, $location, $timeout) {
         'use strict';
         $rootScope.$on('$routeChangeError', function() {
             $location.path('/');
+        });
+        $rootScope.$on('$routeChangeStart', function() {
+            $rootScope.isLoading = true;
+        });
+        $rootScope.$on('$routeChangeSuccess', function() {
+            $timeout(function() {
+            $rootScope.isLoading = false;
+            }, 1000);
         });
     }])
     .controller('HomeCtrl', ['$rootScope', function($rootScope) {
