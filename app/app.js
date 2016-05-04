@@ -16,12 +16,12 @@ angular.module('myApp', ['ngRoute'])
             .when('/error', {
                 template : '<p>Error - Page Not Found</p>'
             })
-            .otherwise('/error');
+            .otherwise('/');
     }])
     .run(['$rootScope', '$location', function($rootScope, $location) {
         'use strict';
         $rootScope.$on('$routeChangeError', function() {
-            $location.path('/error');
+            $location.path('/');
         });
     }])
     .controller('HomeCtrl', ['$rootScope', function($rootScope) {
@@ -67,14 +67,20 @@ angular.module('myApp', ['ngRoute'])
 
     }])
     .controller('EarnCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
-        $rootScope.meals;
-        $rootScope.tiptotal;
-        rootScope.avg;
+        $scope.meals = $rootScope.meals;
+        $scope.tiptotal = $rootScope.tiptotal;
+        $scope.avg = $rootScope.avg;
         
         $scope.reset = function(){
+            console.log($rootScope.meals);
+            
             $rootScope.meals = '';
+            console.log($rootScope.meals);
             $rootScope.tiptotal = '';
             $rootScope.avg = '';
+            $scope.meals = '';
+            $scope.tiptotal = '';
+            $scope.avg = '';
         };
         
     }]);
